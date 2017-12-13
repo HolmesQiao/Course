@@ -2,7 +2,7 @@
 
 void store_to_file(void){
     FILE* file;
-    file = fopen("maze_data", "a+");
+    file = fopen("maze_data.txt", "a+");
     fprintf(file, "%d %d %d %d\n", real_width, real_high, width, high);
     for (int i = 0; i < real_high; i++){
 	for (int j = 0; j < real_width; j++)
@@ -13,7 +13,7 @@ void store_to_file(void){
 
 void read_from_file(void){
     FILE* file;
-    file = fopen("maze_data", "r");
+    file = fopen("maze_data.txt", "r");
     if (!file){
 	fclose(file);
 	std::cout << "File is not exist\n";

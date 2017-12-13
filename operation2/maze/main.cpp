@@ -1,4 +1,5 @@
 #include "data.h"
+#include <SFML/Audio.hpp>
 
 using namespace std;
 
@@ -7,12 +8,17 @@ int map_rank = 0;
 int width, high;
 int real_width, real_high;
 int Map_type;
+sf::SoundBuffer buffer;
+sf::Sound sound;
 
 void draw_map(void);
 void draw_cmd(void);
 
 int main(int argc, char** argv){
     draw_cmd();
+    buffer.loadFromFile("music.wav");
+    sound.setBuffer(buffer);
+    sound.play();
     new_game();
     
     glutInit(&argc, argv);
@@ -35,9 +41,9 @@ void new_game(void){
     if (Map_type == by_algorithm){
 	srand((unsigned) time(NULL));
 	width = high = rand() % _RANK_ + 5;
-	width += _RANK_ - 5;
-	high += _RANK_ - 5;
-	_RANK_ += 5;
+	width += _RANK_ - 3;
+	high += _RANK_ - 3;
+	_RANK_ += 3;
 	real_width = width, real_high = high;
 	if (real_width % 2 == 1) width -= 2;
 	else width -= 3;

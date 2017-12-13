@@ -25,6 +25,7 @@
 }while(0)
 
 typedef GLfloat vertex3[3];
+int times = 1;
 
 GLfloat window_width = 500;
 GLfloat window_high = 500;
@@ -51,6 +52,8 @@ void keyboard(unsigned char key, int x, int y){
 	case 'x': x_angle -= 2; break;
 	case 'y': y_angle -= 2; break;
 	case 'z': z_angle -= 2; break;
+	case 'u': times++;
+	case 'i': times--;
 	case 'a':
 	    if (position / width != 0 &&
 		    real_map[position / width + 1][position % width + 1] != 0){
@@ -165,6 +168,7 @@ void display(void){
     glRotatef(x_angle, 1, 0, 0);
     glRotatef(y_angle, 0, 1, 0);
     glRotatef(z_angle, 0, 0, 1);
+    glScaled(times, times, 1);
     if (position == width * high - 1){
 	/*if (Map_type == by_algorithm) new_game();
 	else exit(1);*/
