@@ -1,6 +1,6 @@
 #include "data.h"
 
-GLfloat window_width = 500.f, window_height = 500.f;
+GLfloat window_width = 1000.f, window_height = 700.f;
 
 int main(int argc, char** argv){
     glutInit(&argc, argv);
