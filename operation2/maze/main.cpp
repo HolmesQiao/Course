@@ -1,5 +1,5 @@
 #include "data.h"
-#include <SFML/Audio.hpp>
+//#include <SFML/Audio.hpp>
 
 using namespace std;
 
@@ -8,17 +8,17 @@ int map_rank = 0;
 int width, high;
 int real_width, real_high;
 int Map_type;
-sf::SoundBuffer buffer;
-sf::Sound sound;
+//sf::SoundBuffer buffer;
+//sf::Sound sound;
 
 void draw_map(void);
 void draw_cmd(void);
 
 int main(int argc, char** argv){
     draw_cmd();
-    buffer.loadFromFile("music.wav");
-    sound.setBuffer(buffer);
-    sound.play();
+    //buffer.loadFromFile("music.wav");
+    //sound.setBuffer(buffer);
+    //sound.play();
     new_game();
     
     glutInit(&argc, argv);

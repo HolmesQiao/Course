@@ -4,8 +4,8 @@
 #include <GLUT/glut.h>
 #include <cstdio>
 
-#define MAX_WIDTH 100
-#define MAX_HIGH 100
+#define MAX_WIDTH 50
+#define MAX_HIGH 50
 #define from_file 0
 #define by_algorithm 1
 
